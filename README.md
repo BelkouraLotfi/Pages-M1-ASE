@@ -1,2 +1,2 @@
 # Pages-M1-ASE
-site pours slides de cours $x=1$
+site pours slides de cours 
