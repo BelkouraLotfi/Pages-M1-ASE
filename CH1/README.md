@@ -1,5 +1,6 @@
 ---
 permalink: /CH1/
+use_math: true
 ---
 
 <style>
