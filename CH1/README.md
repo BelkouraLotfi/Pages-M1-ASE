@@ -29,6 +29,20 @@ td {font-size:100% ;background-color: white;}
 Soit un processus possédant $r$ entrées $u=(u_{1},u_{2},...,u_{r})^{t}$ et $m$ sorties $y=(y_{1},y_{2},...,y_{m})^{t}. $ Si un vecteur $x(t)$ à $n$ composantes (i.e. $x=(x_{1},x_{2},...,x_{n})^{t}$ est proposé pour représenter l'état du système, cette proposition sera pertinente s'il lui correspond un système d'équations de la forme:
 
 $$
+\begin{equation*}
+\fbox{$\left.
+\begin{array}
+[c]{l}%
+\dot{x}=f(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ d}^{\prime
+}\mathbf{\acute{e}tat}\\
+y=h(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ de\,\,sortie}%
+\end{array}
+\right.  $}%
+\end{equation*
+$$
+
+
+$$
 \begin{array}
 [c]{l}
 \dot{x}=f(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ d}^{\prime
