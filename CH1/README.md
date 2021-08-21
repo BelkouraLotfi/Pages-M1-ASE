@@ -167,6 +167,7 @@ où $\omega$ est la vitesse de rotation de l'arbre. En manipulant les équations
 
 Ces équations admettent une écriture matricielle:
 
+$$
 \begin{align*}
 \dot{x}&=f(x,u)=\left(
 \begin{array}{ccc}%
@@ -177,7 +178,7 @@ Ces équations admettent une écriture matricielle:
 \right)  \,x+\left(\begin{array}{c}0\\0\\\dfrac{1}{L}\end{array}\right)  u=A\,x+B\,u \\
 y&=h(x,u)=\left(\begin{array}{ccc}1 & 0 & 0\end{array}\right)  \,x+\left(  0\right)  \,u=C\,x+D\,u
 \end{align*}
-
+$$
 
 Le vecteur $x=(\theta,\omega,i)^{t}$ est donc bien acceptable en tant que vecteur d'état Noter que ce vecteur possède 3 composantes, ce qui correspond aussi à l'ordre de la fonction de transfert $G(p)$.
 
