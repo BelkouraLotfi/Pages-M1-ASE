@@ -32,7 +32,7 @@ $$
 \begin{equation*}
 \fbox{$\left.
 \begin{array}
-[c]{l}%
+[c]{l}
 \dot{x}=f(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ d}^{\prime
 }\mathbf{\acute{e}tat}\\
 y=h(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ de\,\,sortie}
