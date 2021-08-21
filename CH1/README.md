@@ -30,12 +30,11 @@ Soit un processus possédant $r$ entrées $u=(u_{1},u_{2},...,u_{r})^{t}$ et $m$
 
 $$
 \begin{array}
-[c]{l}%
+[c]{l}
 \dot{x}=f(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ d}^{\prime
 }\mathbf{\acute{e}tat}\\
-y=h(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ de\,\,sortie}%
+y=h(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ de\,\,sortie}
 \end{array}
-\right. 
 $$
 
 $$ \label{eq:MSE}\tag{1}
