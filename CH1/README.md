@@ -67,11 +67,12 @@ $$
 
 Recherchons une représentation d'état de ce système. Si on propose pour vecteur d'état
 
-
+$$
 \begin{equation*}
 x=\left(\begin{array}{c}x_{1} \\ x_{2}\end{array}\right) =
 \left(\begin{array}{c}\theta \\ \dot{\theta}\end{array}\right) 
 \end{equation*}
+$$
 
 on obtient
 
