@@ -76,11 +76,13 @@ $$
 
 on obtient
 
+$$
 \begin{align*}
 \dot x_{1}  & =f_{1}(x,u)=x_{2}\\
 \dot x_{2}  & =f_{2}(x,u)=-g\,\sin x_{1}+u/m\\
 y  & =h(x,u)=x_{1}%
 \end{align*}
+$$
 
 Le vecteur $x$ proposée représente donc bien un vecteur d'état possible.
 
