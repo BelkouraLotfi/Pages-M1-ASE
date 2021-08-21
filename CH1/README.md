@@ -1,3 +1,7 @@
+---
+permalink: /CH1/
+---
+
 <style>
 td {font-size:100% ;background-color: white;}
 </style>
