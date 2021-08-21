@@ -35,9 +35,9 @@ $$
 [c]{l}%
 \dot{x}=f(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ d}^{\prime
 }\mathbf{\acute{e}tat}\\
-y=h(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ de\,\,sortie}%
+y=h(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ de\,\,sortie}
 \end{array}
-\right.  $}%
+\right.  $}
 \end{equation*
 $$
 
