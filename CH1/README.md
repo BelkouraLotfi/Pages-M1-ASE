@@ -58,12 +58,13 @@ Cet exemple simple est celui d'une masse $m$ mise en mouvement au moyen d'un cou
 
 
 Avec $g$ accélération de la gravité, l'équation du mouvement s'écrit:
-
+$$
 \begin{equation*}
 m\,\ddot{\theta}(t)+mg\,\sin\theta(t)=u(t)
 \end{equation*}
-
+$$
 Recherchons une représentation d'état de ce système. Si on propose pour vecteur d'état
+
 
 \begin{equation*}
 x=\left(\begin{array}{c}x_{1} \\ x_{2}\end{array}\right) =
