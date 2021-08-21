@@ -37,6 +37,11 @@ y=h(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ de\,\,sortie}%
 \end{array}
 \right. 
 $$
+
+$$ \label{eq:MSE}\tag{1}
+\mathrm{MSE}(\hat{\theta}) = \mathrm{Var}(\hat{\theta}) - \mathrm{Bias}(\hat{\theta},\theta)^2
+$$
+
 où $f=(f_{1},...,f_{n})^{t}$, et $h=(h_{1},...,h_{m})^{t}$. Dans cette représentation, $x(t)\in\mathbb{R}^{n}$ est appelé **vecteur d'état**, $u(t)\in\mathbb{R}^{r}$ est appelé vecteur de commande, et $y(t)\in\mathbb{R}^{m}$ est appelé vecteur de sorties.
 
 
