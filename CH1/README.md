@@ -28,17 +28,15 @@ td {font-size:100% ;background-color: white;}
 
 Soit un processus possédant $r$ entrées $u=(u_{1},u_{2},...,u_{r})^{t}$ et $m$ sorties $y=(y_{1},y_{2},...,y_{m})^{t}. $ Si un vecteur $x(t)$ à $n$ composantes (i.e. $x=(x_{1},x_{2},...,x_{n})^{t}$ est proposé pour représenter l'état du système, cette proposition sera pertinente s'il lui correspond un système d'équations de la forme:
 
-\begin{equation*}
-\fbox{$\left.
+$$
 \begin{array}
 [c]{l}%
 \dot{x}=f(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ d}^{\prime
 }\mathbf{\acute{e}tat}\\
 y=h(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ de\,\,sortie}%
 \end{array}
-\right.  $}%
-\end{equation*}
-
+\right. 
+$$
 où $f=(f_{1},...,f_{n})^{t}$, et $h=(h_{1},...,h_{m})^{t}$. Dans cette représentation, $x(t)\in\mathbb{R}^{n}$ est appelé **vecteur d'état**, $u(t)\in\mathbb{R}^{r}$ est appelé vecteur de commande, et $y(t)\in\mathbb{R}^{m}$ est appelé vecteur de sorties.
 
 
