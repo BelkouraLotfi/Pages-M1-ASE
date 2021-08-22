@@ -1,12 +1,12 @@
 <nav>
 <p style="text-align: center; background-color: white;">
-  <a href="{{site.baseurl}}/">Home</a> |
+  <a href="{{site.baseurl}}/"{% if page.url == "{{site.baseurl}}/" %}class="active"{% endif %}>Home</a> |
   <a href="{{site.baseurl}}/Oldindex.html">avec entete</a>|
   <a href="{{site.baseurl}}/CH1/index2.html">brut</a>|
   <a href="{{site.baseurl}}/M1-CH1-Intro.html">racine</a>|
   <a href="{{site.baseurl}}/index3.html">sansstyle</a>|
-  <a href="{{site.baseurl}}/Site-CH1.html">CH1avecinclude</a>|
-  <a href="{{site.baseurl}}/Site-CH2.html">CH2avecinclude</a>|
+  <a href="{{site.baseurl}}/Site-CH1.html"{% if page.url == "{{site.baseurl}}/Site-CH1.html" %}class="active"{% endif %}>CH1avecinclude</a>|
+  <a href="{{site.baseurl}}/Site-CH2.html"{% if page.url == "{{site.baseurl}}/Site-CH2.html" %}class="active"{% endif %}>CH2avecinclude</a>|
   <!-- <li><a href="/">Home</a></li>
   <li><a href="/Oldindex.html">Blog</a></li> -->
 </p>
