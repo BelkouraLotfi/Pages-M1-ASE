@@ -7,10 +7,8 @@ nav a {
   background: blue;
   color: white;}
 
-nav a:active {
-  text-decoration: underline;
-  color: red;
-  }
+a:hover { background: yellow; }  /* Liens survolés */
+a:active { color: red; }  
 
 h2 {
     color: red;
