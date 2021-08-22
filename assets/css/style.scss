@@ -3,15 +3,3 @@
 
 @import "{{ site.theme }}";
 
-nav a {
-  background: blue;
-  color: white;}
-
-a:hover { background: yellow; }  /* Liens survolés */
-a:active { background: yellow; }  
-
-h2,h3,h4 {
-    color: red;
-    font-size: 16px;
-   font-weight: bold; 
-}
