@@ -14319,7 +14319,6 @@ td {font-size:100% ;background-color: white;}
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Concept-d'&#233;tat:-D&#233;finition">Concept d'&#233;tat: D&#233;finition<a class="anchor-link" href="#Concept-d'&#233;tat:-D&#233;finition">&#182;</a></h3><p>Soit un processus possédant $r$ entrées $u=(u_{1},u_{2},...,u_{r})^{t}$ et $m$ sorties $y=(y_{1},y_{2},...,y_{m})^{t}. $ Si un vecteur $x(t)$ à $n$ composantes (i.e. $x=(x_{1},x_{2},...,x_{n})^{t}$ est proposé pour représenter l'état du système, cette proposition sera pertinente s'il lui correspond un système d'équations de la forme:</p>
-$$
 \begin{equation*}
 \fbox{$\left.
 \begin{array}
@@ -14329,8 +14328,7 @@ $$
 y=h(x,u,t)\qquad\text{dite }\mathbf{\acute{e}quation\ de\,\,sortie}%
 \end{array}
 \right.  $}%
-\end{equation*}
-$$<p>où $f=(f_{1},...,f_{n})^{t}$, et $h=(h_{1},...,h_{m})^{t}$. Dans cette représentation, $x(t)\in\mathbb{R}^{n}$ est appelé <strong>vecteur d'état</strong>, $u(t)\in\mathbb{R}^{r}$ est appelé vecteur de commande, et $y(t)\in\mathbb{R}^{m}$ est appelé vecteur de sorties.</p>
+\end{equation*}<p>où $f=(f_{1},...,f_{n})^{t}$, et $h=(h_{1},...,h_{m})^{t}$. Dans cette représentation, $x(t)\in\mathbb{R}^{n}$ est appelé <strong>vecteur d'état</strong>, $u(t)\in\mathbb{R}^{r}$ est appelé vecteur de commande, et $y(t)\in\mathbb{R}^{m}$ est appelé vecteur de sorties.</p>
 <p>Dans certaines situations où l'état, les commandes ou les sorties sont soumis à des <strong>contraintes</strong> (par ex: saturation des actionneurs), il convient d'être plus précis sur les ensembles dans lesquels évoluent ces vecteurs. On note alors</p>
 <ul>
 <li>$x(t)\in\mathcal{X}\subseteq\mathbb{R}^{n}$ avec ($x$,$\mathcal{X)}=$vecteur et espace d'état</li>
@@ -14575,8 +14573,6 @@ y  &amp; \simeq\left(\begin{array}{cc}%
 \end{equation*}<p>sous la forme du diagramme fonctionnel suivant où les grandeurs sont vectorielles<br><br></p>
 <center><img src="Figures/Rep-Graph1.svg" width="40%"/></center>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell  jp-mod-noInput ">
 
 <div class="jp-Cell-outputWrapper">
@@ -14586,48 +14582,7 @@ y  &amp; \simeq\left(\begin{array}{cc}%
 <div class="jp-OutputArea-child">
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[NbConvertApp] Converting notebook M1-CH1-Intro.md to html
-Traceback (most recent call last):
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/nbformat/reader.py&#34;, line 14, in parse_json
-    nb_dict = json.loads(s, **kwargs)
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/json/__init__.py&#34;, line 357, in loads
-    return _default_decoder.decode(s)
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/json/decoder.py&#34;, line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/json/decoder.py&#34;, line 355, in raw_decode
-    raise JSONDecodeError(&#34;Expecting value&#34;, s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File &#34;/home/lotfi/anaconda3/bin/jupyter-nbconvert&#34;, line 11, in &lt;module&gt;
-    sys.exit(main())
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/jupyter_core/application.py&#34;, line 254, in launch_instance
-    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/traitlets/config/application.py&#34;, line 664, in launch_instance
-    app.start()
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/nbconvert/nbconvertapp.py&#34;, line 350, in start
-    self.convert_notebooks()
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/nbconvert/nbconvertapp.py&#34;, line 524, in convert_notebooks
-    self.convert_single_notebook(notebook_filename)
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/nbconvert/nbconvertapp.py&#34;, line 489, in convert_single_notebook
-    output, resources = self.export_single_notebook(notebook_filename, resources, input_buffer=input_buffer)
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/nbconvert/nbconvertapp.py&#34;, line 418, in export_single_notebook
-    output, resources = self.exporter.from_filename(notebook_filename, resources=resources)
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/nbconvert/exporters/exporter.py&#34;, line 181, in from_filename
-    return self.from_file(f, resources=resources, **kw)
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/nbconvert/exporters/exporter.py&#34;, line 199, in from_file
-    return self.from_notebook_node(nbformat.read(file_stream, as_version=4), resources=resources, **kw)
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/nbformat/__init__.py&#34;, line 143, in read
-    return reads(buf, as_version, **kwargs)
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/nbformat/__init__.py&#34;, line 73, in reads
-    nb = reader.reads(s, **kwargs)
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/nbformat/reader.py&#34;, line 58, in reads
-    nb_dict = parse_json(s, **kwargs)
-  File &#34;/home/lotfi/anaconda3/lib/python3.8/site-packages/nbformat/reader.py&#34;, line 17, in parse_json
-    raise NotJSONError((&#34;Notebook does not appear to be JSON: %r&#34; % s)[:77] + &#34;...&#34;) from e
-nbformat.reader.NotJSONError: Notebook does not appear to be JSON: &#39;&lt;style&gt;\ntd {font-size:100% ;background...
+<pre>[NbConvertApp] Converting notebook M1-CH1-Intro.ipynb to html
 </pre>
 </div>
 </div>
