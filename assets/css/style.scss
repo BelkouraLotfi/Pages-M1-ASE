@@ -3,9 +3,11 @@
 
 @import "{{ site.theme }}";
 
-a.active {
-  color: #FFE000;  
-}
+.navigation a.active{
+  background: #29abe2;
+  color: #fff;
+  border-radius: 5px; }
+
 
 h2 {
     color: red;
