@@ -4,5 +4,10 @@
 @import "{{ site.theme }}";
 
 a.active {
-  color: #FFE000;
+  color: #FFE000;  
+}
+
+h1.custom {
+    color: red;
+    font-size: 16px;
 }
