@@ -2,7 +2,3 @@
 ---
 
 @import "{{ site.theme }}";
-
-a.active {
-  color: #FFE000;
-}
