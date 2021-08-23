@@ -1,5 +1,5 @@
 ---
-title: Chap1
+title: Home
 navigation_weight: 1
 ---
 
