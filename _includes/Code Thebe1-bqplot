@@ -1,0 +1,62 @@
+import numpy as np
+from bqplot import pyplot as plt
+from IPython.display import display
+from ipywidgets import interactive, fixed, FloatSlider, HBox, Layout
+#from control.matlab import tf, sys, step  # MATLAB-like functions
+from ipywidgets import GridspecLayout, AppLayout
+
+import scipy
+from scipy import signal
+
+tau1=1
+tau2=2
+T = np.linspace(0, 100, 200)
+
+fig1=plt.figure()
+lbfig1 = plt.plot(T,0*T)
+plt.title('Réponse indicielle')
+
+fig2=plt.figure()
+lbfig2 = plt.scatter(np.roots([1,1,1]).real, np.roots([1,1,1]).imag, marker='diamond', colors=['red'])
+plt.title('Position des pôles dans le plan complexe')
+
+xax, yax = plt.axes()['x'], plt.axes()['y']
+
+axes_options = {'x': {'label': 'X','font-size': 14}, 'y': {'label': 'Y'}}
+
+xax.tick_values = np.arange(-2,1.5,.5) 
+yax.tick_values = np.arange(-1,1.2,.2)
+yax.tick_format = '0.1f'
+xax.tick_format = '0.1f'
+
+plt.vline(0),plt.hline(0)
+plt.xlim(-2,1)
+plt.ylim(-1, 1)
+#axes_options = {'x': {'label': 'X'}, 'y': {'label': 'Y'}}
+#plt.label('x'='xxx','default_size:50px')
+
+#test_label = plt.label(['text ici '], default_size=26, font_weight='bolder', colors=['orange'])
+#test_label.x,test_label.y   = [-0.5], [0.2]
+
+
+def update_plot(k):
+    den=[tau1*tau2, tau1+tau2, 1, k]  
+    sys = signal.lti([k], den)
+    t,y= signal.step2(sys)
+    r=np.roots(den)
+    lbfig1.x, lbfig1.y = t,y
+    lbfig2.x, lbfig2.y = r.real, r.imag
+
+w = interactive(update_plot, 
+             k=FloatSlider(min=-1, max=3, step=.2,value=0.2, 
+                           orientation='vertical', description='valeur de k'))   
+
+AppLayout(header=None,
+          left_sidebar=w,
+          center=fig2,
+          right_sidebar=fig1,
+          footer=None,
+          pane_widths=[1,5, 5],
+          pane_heights=[1, 1, 1],
+          align_items='center',
+          border='solid')
