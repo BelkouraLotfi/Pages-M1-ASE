@@ -21,6 +21,16 @@
   }
 </script>
 <script src="https://unpkg.com/thebe@latest/lib/index.js"></script>
+  
+<button id="activateButton" style="width: 120px; height: 40px; font-size: 1.5em;">
+  Activate
+</button>
+<script>
+var bootstrapThebe = function() {
+    thebelab.bootstrap();
+}
+document.querySelector("#activateButton").addEventListener('click', bootstrapThebe)
+</script>  
 
 <pre data-executable="true" data-language="python">
 %matplotlib widget
