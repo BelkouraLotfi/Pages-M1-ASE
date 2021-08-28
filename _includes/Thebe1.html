@@ -63,9 +63,6 @@ def update(w = 1, amp = 1):
       binderUrl: "https://mybinder.org",
       repoProvider: "github",
     },
-       thebelab.on("status", function (evt, data) {
-    console.log("Status changed:", data.status, data.message);
-});
   }
 </script>
 <script src="https://unpkg.com/thebe@latest/lib/index.js"></script>
@@ -146,6 +143,9 @@ var bootstrapThebe = function() {
     thebelab.bootstrap();
 }
 document.querySelector("#activateButton").addEventListener('click', bootstrapThebe)
+thebelab.on("status", function (evt, data) {
+    console.log("Status changed:", data.status, data.message);
+});  
 </script>  
   
   <h2> fin bqplot</h2> 
