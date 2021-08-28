@@ -63,6 +63,9 @@ def update(w = 1, amp = 1):
       binderUrl: "https://mybinder.org",
       repoProvider: "github",
     },
+       thebelab.on("status", function (evt, data) {
+    console.log("Status changed:", data.status, data.message);
+});
   }
 </script>
 <script src="https://unpkg.com/thebe@latest/lib/index.js"></script>
