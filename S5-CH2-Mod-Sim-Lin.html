@@ -13279,6 +13279,35 @@ m\dot v(t)=C_u\,u(t)-\textstyle\frac{1}{2} \rho A C_v v^2(t)-mg\sin\theta(t)
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>                      <span class="c1"># fonction solve_ivp pour equa diff</span>
+<span class="kn">from</span> <span class="nn">bqplot</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>                           <span class="c1"># module plt pour affihage</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                                         <span class="c1"># module np pour calcul numérique</span>
+
+<span class="n">m</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">C_v</span><span class="p">,</span> <span class="n">C_u</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mf">1.225</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">9.81</span>     <span class="c1"># paramètres du véhicule</span>
+<span class="n">tps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>                               <span class="c1"># temps de simulation</span>
+<span class="n">cmde</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="k">else</span> <span class="mi">20</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tps</span><span class="p">]</span>                   <span class="c1"># commande 20% pour t&gt;10s</span>
+<span class="n">pente</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">70</span> <span class="k">else</span> <span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tps</span><span class="p">]</span>                    <span class="c1"># pente de 3deg pour t&gt;70</span>
+
+<span class="k">def</span> <span class="nf">second_membre_nl</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>                          <span class="c1"># 2nd membre de l&#39;équa-diff dv/dt=....</span>
+    <span class="n">u</span><span class="o">=</span><span class="n">cmde</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">tps</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span>
+    <span class="n">theta</span><span class="o">=</span><span class="n">pente</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">tps</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">argmin</span><span class="p">()]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">C_u</span><span class="o">*</span><span class="n">u</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">rho</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">C_v</span><span class="o">*</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">g</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">))</span>
+
+<span class="c1">#résolution de l&#39;équa-diff entre 0 et 100s avec vitesse initiale (CI) de 25m/s (90km/h)</span>
+<span class="n">sol_nl</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">second_membre_nl</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],[</span><span class="mi">25</span><span class="p">],</span><span class="n">t_eval</span><span class="o">=</span><span class="n">tps</span><span class="p">,</span><span class="n">rtol</span><span class="o">=</span> <span class="mf">1e-5</span><span class="p">)</span> 
+
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Vitesse véhicule / Commande accélérateur /pente&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;90%&#39;</span> <span class="c1">#fig.layout.width = &#39;600px&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tps</span><span class="p">,</span><span class="n">sol_nl</span><span class="o">.</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tps</span><span class="p">,</span><span class="n">cmde</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tps</span><span class="p">,</span><span class="n">pente</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">line_style</span> <span class="o">=</span> <span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -13291,13 +13320,13 @@ m\dot v(t)=C_u\,u(t)-\textstyle\frac{1}{2} \rho A C_v v^2(t)-mg\sin\theta(t)
 
  
  
-<div id="6bd13f31-6203-4243-abda-9f76d0a46175"></div>
+<div id="171cd7b5-3286-4961-a5db-5235cd9ca049"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#6bd13f31-6203-4243-abda-9f76d0a46175');
+var element = $('#171cd7b5-3286-4961-a5db-5235cd9ca049');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "d413e714d00d40d0b1213487e35d9fa4", "version_major": 2, "version_minor": 0}
+{"model_id": "3d45a3c44fd14450b0a56ae5afc2249a", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
@@ -13381,13 +13410,13 @@ c=\left(\textstyle\frac {\partial f}{\partial \theta}\right)_{\left|_e\right.}=-
 
  
  
-<div id="9da59cd2-7782-45ed-8422-271846ad160e"></div>
+<div id="6406135c-2eed-4d44-b4a6-241fd2954502"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#9da59cd2-7782-45ed-8422-271846ad160e');
+var element = $('#6406135c-2eed-4d44-b4a6-241fd2954502');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "784bd63b72b3488b907f15c7779cbb6f", "version_major": 2, "version_minor": 0}
+{"model_id": "d2926f8199474c2182f7263b217ad743", "version_major": 2, "version_minor": 0}
 </script>
 </div>
 
