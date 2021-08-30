@@ -13098,8 +13098,8 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Lorsque tous les élement d'un asservissement sont linéaires, la structure générale de commande inroduite précédemment</p>
-<div><center><img src="Figures/StructBouclee.svg" width="50%"/></center></div><p>peut prendre une forme plus précise et plus pratique pour l'analyse et la conception, comme par exemple (refaire fgure)</p>
-<center><img src="Figures/SB-KGH-D.svg", width="40%"/></center>
+<div><center><img src="Figures-S5/StructBouclee.svg" width="50%"/></center></div><p>peut prendre une forme plus précise et plus pratique pour l'analyse et la conception, comme par exemple (refaire fgure)</p>
+<center><img src="Figures-S5/SB-KGH-D.svg", width="40%"/></center>
 </div>
 </div>
 </div>
@@ -13121,7 +13121,7 @@ rapidité et la précision de ses réponses.</li>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Fonctions-de-transfert-&#233;quivalentes">Fonctions de transfert &#233;quivalentes<a class="anchor-link" href="#Fonctions-de-transfert-&#233;quivalentes">&#182;</a></h3><p>Le cadre de la TL permet une analyse simple en terme de Fonction de transfert équivalente. Exemple:</p>
-<p><center><img src="Figures/SB-KGH.svg", width="40%"/></center> 
+<p><center><img src="Figures-S5/SB-KGH.svg", width="40%"/></center> 
 Dans ce premier exemple, $Y(p)=K(p)G(p)\,\varepsilon(p)=K(p)G(p)(X(p)-H(p)Y(p))$, et par suite</p>
 \begin{equation*}
 Y(p)=\frac{K(p)G(p)}{1+K(p)G(p)H(p)}X(p)
@@ -13136,7 +13136,7 @@ transfert $\frac{KG}{1+KGH}$.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Dans l'exemple suivant, on ne peut plus parler de fonction de transfert unique, le système ayant deux entrées.</p>
-<center><img src="Figures/SB-KGH-D.svg", width="40%"/></center><p>Cependant le calcul de la sortie fait bien apparaître deux fonctions de transfert équivalentes, l'une relative à l'entrée $x$ et l'autre à la perturbation $d$. On obtient en effet dans ce cas</p>
+<center><img src="Figures-S5/SB-KGH-D.svg", width="40%"/></center><p>Cependant le calcul de la sortie fait bien apparaître deux fonctions de transfert équivalentes, l'une relative à l'entrée $x$ et l'autre à la perturbation $d$. On obtient en effet dans ce cas</p>
 \begin{eqnarray*}
 &amp;&amp;  Y(p)=\underbrace{\frac{K(p)G(p)}{1+K(p)G(p)H(p)}}_{W_X(p)}X(p)+\underbrace{\frac{G(p)}{1+K(p)G(p)H(p)}}_{W_D(p)}D(p)
 \end{eqnarray*}<p>$W_X$ et $W_D$ portent les noms respectifs de <strong>transfert en poursuite</strong> et <strong>transfert en régulation</strong>.</p>
@@ -13148,7 +13148,7 @@ transfert $\frac{KG}{1+KGH}$.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Dans la phase de modélisation, la perturbation n'agit pas toujours en amont du système (comme précédemment). D'autres structures (ou comibnaisons) peuvent être considérées, comme les suivantes:</p>
-<center><img src="Figures/SB-KG1-D2.svg", width="40%"/></center><center><img src="Figures/SB-KG1-D3.svg", width="44%"/></center><p>La conception des lois de commande sera différente selon le schéma adopté.</p>
+<center><img src="Figures-S5/SB-KG1-D2.svg", width="40%"/></center><center><img src="Figures-S5/SB-KG1-D3.svg", width="44%"/></center><p>La conception des lois de commande sera différente selon le schéma adopté.</p>
 
 </div>
 </div>
@@ -13173,7 +13173,7 @@ directement le dénominateur de la fonction de transfert équivalente</li>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Exemple-utilisant-le-cri&#232;re-de-Routh:">Exemple utilisant le cri&#232;re de Routh:<a class="anchor-link" href="#Exemple-utilisant-le-cri&#232;re-de-Routh:">&#182;</a></h4><p>Pour étudier la stabilité en fonction du gain $k$ du système suivant (instable en boucle ouverte car pôle à l'origine):</p>
-<center><img src="Figures/SB-Stab-Ex.svg", width="40%"/></center><p>La FT équivalente est donnée par $W=\frac{KG}{1+KGH}=\frac{k}{p^3+p^2+5p+k}$ et le crière de Routh appliqué au dénominateur donne (après calcul simple) $0\leq k\leq 30$</p>
+<center><img src="Figures-S5/SB-Stab-Ex.svg", width="40%"/></center><p>La FT équivalente est donnée par $W=\frac{KG}{1+KGH}=\frac{k}{p^3+p^2+5p+k}$ et le crière de Routh appliqué au dénominateur donne (après calcul simple) $0\leq k\leq 30$</p>
 
 </div>
 </div>
@@ -13182,7 +13182,7 @@ directement le dénominateur de la fonction de transfert équivalente</li>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Pr&#233;cision">Pr&#233;cision<a class="anchor-link" href="#Pr&#233;cision">&#182;</a></h3><p>On considère dans ce paragraphe (pour simplifier) des systèmes bouclés  supposés réduits au schéma bloc suivant (attention on supposera les schémas stables par ailleurs):<br><br></p>
-<center><img src="Figures/SB-KG1.svg", width="40%"/></center><p>On étudie ici l'erreur statique $\varepsilon=y-x$ (i.e. en régime permanent) à des entrées tests (échelon $x_0/p$, rampe $x_0/p^2$, etc...). L'erreur exprimée après transformation de Laplace et l'application du théorème de la valeur finale 
+<center><img src="Figures-S5/SB-KG1.svg", width="40%"/></center><p>On étudie ici l'erreur statique $\varepsilon=y-x$ (i.e. en régime permanent) à des entrées tests (échelon $x_0/p$, rampe $x_0/p^2$, etc...). L'erreur exprimée après transformation de Laplace et l'application du théorème de la valeur finale 
 fournissent:</p>
 \begin{equation*}
 \varepsilon(p)=\frac{1}{1+K(p)G(p)}X(p),\qquad\qquad\varepsilon_{\infty}%
@@ -13218,7 +13218,7 @@ K(p)G(p)=\frac{k}{p^{\alpha}}\,\frac{1+a_{1}p+...}{1+b_{1}p+....}\qquad\qquad X(
     <tr><td style="border-width:1px; border-style:solid; ">$\beta=0$ (échelon)</td> <td style="border-width:1px; border-style:solid; ">$\dfrac{x_0}{1+k}$ </td> <td style="border-width:1px; border-style:solid; ">$0$</td></tr>  
       <tr><td style="border-width:1px; border-style:solid; ">$\beta=1$ (rampe)</td> <td style="border-width:1px; border-style:solid; ">$\infty$ </td> <td style="border-width:1px; border-style:solid; ">$\dfrac{x_0}{k}$</td></tr>     
 </table>  </td>    
-        <td> <center> <img src="Figures/SB-precision.svg", width="100%"/></center></td>    
+        <td> <center> <img src="Figures-S5/SB-precision.svg", width="100%"/></center></td>    
     </tr>
 </table><p>$\rightarrow$ Pour une bonne précision en réponse à une entrée constante et une erreur finie en réponse à une rampe, il suffit que $K(p)$ ou $G(p)$ contienne (au moins) un intérateur pur. On peut vérifier (à faire) que le transfert équivalent $W=\frac{KG}{1+KG}$ possède un gain statique unitaire $(W(0)=1)$.</p>
 
@@ -13229,7 +13229,7 @@ K(p)G(p)=\frac{k}{p^{\alpha}}\,\frac{1+a_{1}p+...}{1+b_{1}p+....}\qquad\qquad X(
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Action-int&#233;grale-et-Rejet-de-perturbations">Action int&#233;grale et Rejet de perturbations<a class="anchor-link" href="#Action-int&#233;grale-et-Rejet-de-perturbations">&#182;</a></h3><p>La même approche peut être utilisée pour étudier l'effet des perturbations (attention on supposera les schémas stables par ailleurs). On considère le cas précédent avec $H=1$.</p>
-<p><center><img src="Figures/SB-KG1-D.svg", width="40%"/></center>
+<p><center><img src="Figures-S5/SB-KG1-D.svg", width="40%"/></center>
 \begin{eqnarray*}
   &amp;&amp;Y(p) = \frac{K(p)G(p)}{1+K(p)G(p)}X(p)+\frac{G(p)}{1+K(p)G(p)}D(p)=
     W_X\,X(p)+W_D\,D(p)
@@ -13284,8 +13284,8 @@ $\rightarrow$ Pour avoir $W_D(0)=0$, et donc pour en plus rejeter une perturbati
 <li>(a) correcteur Proportionnel (P) avec $K(p)=4$. Pas d'intégrateur pur ni dans $K$ ni dans $G$<br></li>
 <li>(b) correcteur Proportionnel+ Intégral (PI) avec $K(p)=3 + \frac{15}{p}$. (a) un intégrateur $\rightarrow$ bonne précision en poursuite; (b) intégrateur en ammont de $G(p)$ $\rightarrow$ la perturbation constante est rejetée
 <br><br><table width=90%>
-  <tr><td width=50%><center><img src="Figures/SB-KG1-D.svg", width="90%"/><img></center>  </td>
-      <td width=50%><center><img src="Figures/SB-precision-Illustration.svg", width="80%"/></center> </td>
+  <tr><td width=50%><center><img src="Figures-S5/SB-KG1-D.svg", width="90%"/><img></center>  </td>
+      <td width=50%><center><img src="Figures-S5/SB-precision-Illustration.svg", width="80%"/></center> </td>
   </tr>    
 </table></li>
 </ul>
